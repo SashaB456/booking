@@ -6,12 +6,16 @@
     <title>Document</title>
 </head>
 <body>
+    {% if bookings %}
     <ul>
         {% for booking in bookings %}
         <li>
-            {{booking.start_date}} -- {{booking.end_date}} -- {{booking.person}} -- {{bookperson.room}}
+            {{booking.start_date}} -- {{booking.end_date}} -- {{booking.person}} -- {{booking.room}}
         </li>
         {% endfor %}
     </ul>
+    {% else %}
+    <p>Error</p>
+    {% endif %}
 </body>
 </html>
