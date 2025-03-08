@@ -17,9 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rooms import views
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('all-bookings/', include('rooms.urls')),
-    path('create-booking/', views.post_dates, name='create-booking'),
+    path('all-bookings/', views.all_bookings, name='all-bookings'),
+    path('create-booking/', views.create_booking, name='create-booking'),
+    path('all-users/', views.get_all_users, name='all-users'),
+    path('delete-booking/', views.delete_booking, name='delete-booking'),
+    #static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT),
 ]

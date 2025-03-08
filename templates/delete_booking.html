@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="delete" action="{% url 'delete-booking' %}">
+        {% csrf_token %}
+        <lable for="deleted-id" placeholder=1></lable>
+        <input type="text" id="deleted-id" name="deleted-id">
+        <button type="submit">Видалити</button>
+    </form>
+</body>
+</html>
